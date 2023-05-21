@@ -6,7 +6,7 @@ export const Formulario = () => {
        <p className=" uppercase font-bold text-center">Formulario para registrar los pacientes de las {''}
        <span className=" text-indigo-700">clinicas y alrededores</span></p> 
 
-        <form className="border p-4 rounded-lg shadow-lg my-7">
+        <form className="border p-4 rounded-lg shadow-lg my-6 bg-white">
             <div >
                 <label className=" uppercase font-bold" htmlFor="">Nombre mascota</label>
                 <input 
