@@ -1,8 +1,17 @@
 
-export const Paciente = ({ pacientel, setPacient}) => {
+export const Paciente = ({ pacientel, setPacient, eliminarPaciente}) => {
 
   //mostrar la informacion en los span
-  const {nombre, propietario, email, fecha, sintomas} =  pacientel
+  const {nombre, propietario, email, fecha, sintomas, id} =  pacientel
+
+  const handleEliminar = ()=>{
+    /* console.log('eliminando') */
+    const respuesta = confirm('Deseas eliminar el registro?')
+
+    if(respuesta){
+      eliminarPaciente(id)
+    }
+  }
 
 
 
@@ -34,7 +43,8 @@ export const Paciente = ({ pacientel, setPacient}) => {
 
           <button
             className="bg-red-800 text-white py-1 px-3 rounded hover:bg-red-700 font-bold m-3" 
-            type="button">
+            type="button"
+            onClick={handleEliminar}>
               Eliminar
           </button>
         </div>

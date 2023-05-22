@@ -1,7 +1,7 @@
 import { Paciente } from "./Paciente"
 
 
-export const Pacientes = ({pacientes, setPacient}) => {
+export const Pacientes = ({pacientes, setPacient, eliminarPaciente}) => {
   return (
     <div className="w-2/3">
 
@@ -16,6 +16,8 @@ export const Pacientes = ({pacientes, setPacient}) => {
               key={pacientel.id}
               pacientel={pacientel} 
               setPacient={setPacient}
+              eliminarPaciente={eliminarPaciente}
+
               />
       
           ))}
