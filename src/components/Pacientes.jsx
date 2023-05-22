@@ -1,12 +1,39 @@
 import { Paciente } from "./Paciente"
 
 
-export const Pacientes = () => {
+export const Pacientes = ({pacientes, setPacient}) => {
   return (
     <div className="w-2/3">
-      <h1 className=" uppercase font-bold text-center">paciente registrado por la
-       <span className=" text-indigo-700"> clinica</span> </h1>
-      <Paciente/>
+
+      {pacientes && pacientes.length ? (
+
+          <>
+          <h1 className=" uppercase font-bold text-center font-mono">paciente registrado por la
+          <span className=" text-indigo-700"> clinica</span> </h1>
+
+          {pacientes.map(pacientel =>(
+              <Paciente
+              key={pacientel.id}
+              pacientel={pacientel} 
+              setPacient={setPacient}
+              />
+      
+          ))}
+
+         </>
+
+
+      ): (
+        <>
+            <h1 className=" uppercase font-bold text-center">No hay pacientes empieza a colocarlos
+            <span className=" text-indigo-700"> aqui</span> </h1>
+        </>
+      )}
+
+
+     
+
+    
     </div>
   )
 }
